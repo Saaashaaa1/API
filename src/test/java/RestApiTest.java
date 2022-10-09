@@ -1,10 +1,9 @@
-package rest;
-
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.junit.Test;
+import rest.RestApiGet;
 import rest.Weather.WeatherObject;
 
 public class RestApiTest {
@@ -13,7 +12,7 @@ public class RestApiTest {
     String city="kyiv";
     @Test
     public void Test(){
-        String s=RestApiGet.getWeather(url+city);
+        String s= RestApiGet.getWeather(url+city);
         System.out.println("Response code:"+RestApiGet.getResponseCode());
         JSONObject jsonObject=new JSONObject(s);
         System.out.println(jsonObject.get("temperature"));
